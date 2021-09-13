@@ -15,7 +15,7 @@ function obtenerDatos() {
    var obeso = 'Su peso está en la categoría de Obeso para adultos de su misma estatura. Para su estatura, un peso normal variaría entre 47.4 a 63.7 kilogramos. Las personas que tienen sobrepeso o son obesas tienen un mayor riesgo de afecciones crónicas, tales como hipertensión arterial, diabetes y colesterol alto. Toda persona que tenga sobrepeso debería tratar de evitar ganar más peso. Además, si usted tiene sobrepeso junto con otros factores de riesgo (como niveles altos de colesterol LDL, niveles bajos de colesterol HDL o hipertensión arterial), debería tratar de perder peso. Incluso una pequeña disminución (tan solo 10 % de su peso actual) puede ayudar a disminuir el riesgo de enfermedades. Hable con su proveedor de atención médica para establecer maneras adecuadas de perder peso.';
 
    document.registro.imcobtenido.value = masa;
-   alert(masa);
+   
 
    if (masa >= 20) 
    {
