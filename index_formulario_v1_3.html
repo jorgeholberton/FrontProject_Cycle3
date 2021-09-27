@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CALCULADORA IMC EN LÍNEA </title>
+    
     <!--Hojas de estilo css-->
     <!--Hojas de estilo css internas en html <style> </style>-->
     <!--llamado archivo externo css-->
     <LINK REL=StyleSheet HREF="css/formulario_imc.css" TYPE="text/css" MEDIA=screen>
+    <link rel="stylesheet" HREF="css/estilos.css">
+    <!--<link rel="stylesheet" href="https://carontestudio.com/css/main.min.css">-->
+     
        <!--Fin Hojas de estilo css-->   
     <!--Enlaces Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-       
-</head>
+    <link rel="shortcut icon" type="image/png" href="imagenes/favicon.png"/>  
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
 
-
+<!-- src="video/video.mp4"  src="https://carontestudio.com/img/f1.mp4" -->
 <body >
-   
+  
+     
       <h1 align="center" <strong> CALCULADORA IMC EN LÍNEA </strong></h1> 
    
     <!--form define formalmente un formulario -->
@@ -29,8 +37,14 @@
       
         <form action="//dirección de envío" method="post" no muestra los elementos de ruta, puede enviar imágenes>
       -->
-    <form  name='registro' id="registro" >    
+    <form  name='registro' id="registro" >   
+      <div class="one">
+        <video id="videofondo" class="video-background" poster="https://carontestudio.com/img/contacto.jpg" autoplay="autoplay" no-controls="" muted="muted" loop="">
+          <source  src="video/video.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2""">
+        </video>
+      </div> 
    <!-- <form action="/" method="post" name='registro' id="registro" </div>-->
+    
       <p class="texto_general" align="all"><strong>
         <img  src="imagenes/medicina2.png"   style="max-width:100%;height:auto;">
         Esta calculadora proporciona el IMC y la correspondiente categoría de nivel de 
@@ -39,18 +53,14 @@
       </strong>
       </p>
       <br/>
+      
       <label for="sistema"><strong>Seleccione Sistema:</strong></label><!--Etiqueta de texto-->
-             <!-----Combox-->
-       <!-- <select id="sistemas" name="medidas">
-          <option value="sm" selected>Sistema Métrico</option>
-          <option value="si">Sistema Inglés</option>
-        </select>-->
-        <select class="form-select" aria-label="Default select example" id="combo" onchange="metricas();">
-            <option selected>Abra este Menú de Selección</option>
-            <option value="1">Sistema Métrico</option>
-            <option value="2">Sistema Inglés</option>
-          </select>
-         <!-----Fin Combox--> 
+      <!-----Inicio Combox-->  
+      <select id="combo" onchange="metricas()">
+        <option value="1">Sistema Métrico</option>
+        <option value="2">Sistema Inglés</option>
+      </select>
+     <!-----Fin Combox--> 
          <p></p>
          <!--  validar combo--> 
          <!--Pendiente con javascript-->
@@ -66,7 +76,7 @@
               <!--Para definir el valor predeterminado de un elemento <input>, debes usar el atributo value--> 
               <br/><!--salto de linea. required pattern="[A-Za-z0-9]{3,40}" 
                 valida letras mayúsculas y minúsculas y números {3,40} valida longitud mínima y máxima-->
-              <input type="text" class="form-control" required  pattern="[A-Za-z]{3,40}" id="nomb" name="nombre_usuario" title="Nombre de usuario. Obligatorio, entre 3-40 carácteres
+              <input type="text" size=400px class="form-control" required  pattern="[A-Za-z]{3,40}" id="nomb" name="nombre_usuario" title="Nombre de usuario. Obligatorio, entre 3-40 carácteres
               Sólo se permiten letras mayúsculas y minúsculas"> <!--campo de texto o de captura de una sola línea-->
               
               <br/><!--salto de linea.-->
@@ -78,14 +88,14 @@
               <label for="apellido"><strong>Apellidos:</strong><abbr title="Obligatorio" aria-label="required">*</abbr></label><!--Etiqueta de texto-->
               <br/><!--salto de linea. required pattern="[A-Za-z0-9]{3,40}" 
                 valida letras mayúsculas y minúsculas y números {3,40} valida longitud mínima y máxima-->
-              <input type="text" class="form-control" required pattern="[A-Za-z]{3,40}" id="ape" name="apellido_usuario" title="Apellido de usuario. Obligatorio, entre 3-40 carácteres
+              <input type="text" size=400px class="form-control" required pattern="[A-Za-z]{3,40}" id="ape" name="apellido_usuario" title="Apellido de usuario. Obligatorio, entre 3-40 carácteres
               Sólo se permiten letras mayúsculas y minúsculas"> <!--campo de texto o de captura de una sola línea-->
        
               <br/><!--salto de linea.-->
               <br/><!--salto de linea.-->
               <label for="est" id="lbl_est"><strong>Estatura en Metros:</strong><abbr title="Obligatorio" aria-label="required">*</abbr></label><!--Etiqueta de texto-->
               <br/><!--salto de linea.-->
-              <input type="number" class="form-control" required step="0.1"  id="est" name="estatura_usuario" title="Estatura de usuario. Obligatorio, entre 1 y 3 
+              <input type="number" size=400px class="form-control" required step="0.01"  id="est" name="estatura_usuario" title="Estatura de usuario. Obligatorio, entre 1 y 3 
               números separados por punto"> <!--campo de texto o de captura de una sola línea-->
            
               <br/><!--salto de linea.-->
@@ -94,7 +104,7 @@
                <label for="peso" id="lbl_peso"><strong>Peso en Kilos:</strong><abbr title="Obligatorio" aria-label="required">*</abbr></label><!--Etiqueta de texto-->
                <br/><!--salto de linea.-->
               
-               <input type="number" class="form-control" required step="0.1" id="peso" name="peso_usuario" title="Peso de usuario. Obligatorio, entre 1 y 3 
+               <input type="number" size=400px class="form-control" required step="0.01" id="peso" name="peso_usuario" title="Peso de usuario. Obligatorio, entre 1 y 3 
                números separados por punto"> <!--campo de texto o de captura de una sola línea-->
      
            
@@ -111,9 +121,9 @@
            <div class="input-group mb-3">
                 <label for="email" class="form-label"><strong>Correo Electrónico:</strong><abbr title="Obligatorio" aria-label="required">*</abbr></label>
                 <div class="input-group has-validation"> 
-                    <input type="text" required class="form-control" placeholder="Username" aria-label="Username">
+                    <input type="text" size=400px required class="form-control" placeholder="Username" aria-label="Username">
                     <span class="input-group-text">@</span>
-                    <input type="text" class="form-control" id="email" aria-describedby="inputGroupPrepend2" required validarEmail()>
+                    <input type="text" size=400px class="form-control" id="email" aria-describedby="inputGroupPrepend2" required validarEmail()>
                     
                     <div class="invalid-feedback">
                         Please choose a username.
@@ -145,7 +155,7 @@
            <br/><!--salto de linea.-->
            <br/><!--salto de linea.-->
            <!--definir un valor predeterminado para un elemento <textarea>, lo colocas entre las etiquetas de apertura y cierre del elemento <textarea>-->
-           <textarea id="msg" name="mensaje_usuario" cols="50" rows="4" aria-label="readonly input example" readonly ></textarea><!--un campo de texto multilínea.-->
+           <textarea id="msg" name="mensaje_usuario" cols="150" rows="4" aria-label="readonly input example" readonly ></textarea><!--un campo de texto multilínea.-->
         
            <br/><!--salto de linea.-->
            <br/><!--salto de linea.-->
@@ -153,46 +163,24 @@
          
         
         
-        <button type="submit" class="btn btn-success" onclick="validarFormulario()"><strong>Enviar</strong></button>
+        <button type="submit" size=200px class="btn btn-success" onclick="{(e) => this.validarFormulario(e)}";drawChart()><strong>Enviar</strong></button>
         <!--<input type="button" name="btn_calcular" id="btn_calcular" value="Calcular" class="btn btn-success" onclick="obtenerDatos()">-->
-
+        <button type="button" size=200px class="btn btn-success" onclick="grafica()"><strong>Gráfica</strong></button>
             <br/><!--salto de linea.-->
-           
-         
-          <!--El elemento <button> también acepta un atributo de type, que a su vez acepta uno de 
-              estos tres valores: submit, reset o button.
-            - botón submit (el valor predeterminado) envía los datos del formulario a la 
-              página web definida por el atributo action del elemento <form>.
-            - botón reset restablece de inmediato todos los controles de formulario a su 
-              valor predeterminado, por buena practica no usarlo.
-            - Un clic en un botón button no hace nada, para crear botones personalizados: 
-              puedes definir su función con JavaScript.
-            -->
        </form>
+       <script>
+         function grafica(){
+          location.href="C:/Users/Akenatom/Documents/GitHub/FrontProject_Cycle3/GoogleChart2B_IMC.html"
+         }
+
+       </script>
+
   <!--Llamado archivo javascript-->
  <script src="javascript/formulario_imc.js"></script>
- 
+ <script src="javascript/grafica_imc.js"></script>
+ <br/><!--salto de linea.-->
+ <!--Capa para ubicar la gráfica-->
+       <div id="linechart_material" style="width: 900px; height: 500px;"></div>
 </body>
 
 </html>
-<!-- Enviar datos del formulario a un servidor-->
-<!-- El elemento <form> define dónde y cómo enviar los datos gracias a los atributos 
-    action y method.
-
-Proporcionamos un nombre (name) a cada control de formulario. 
-Los nombres son importantes tanto en el lado del cliente como del servidor; 
-le dicen al navegador qué nombre debe dar a cada dato y, en el lado del servidor, 
-dejan que el servidor maneje cada dato por su nombre. Los datos del formulario se envían 
-al servidor como pares de nombre/valor.
-
-En nuestro ejemplo, el formulario envía tres datos denominados «user_name», «user_email» y 
-«user_message». Esos datos se envían a la URL «/my-handling-form-page» utilizando el 
-método post de HTTP.
-
-En el lado del servidor, la secuencia de comandos de la URL «/my-handling-form-page» 
-recibe los datos como una lista de tres elementos clave/valor contenidos en la solicitud 
-HTTP. La forma en que este script maneja esos datos depende de dada lenguaje de 
-servidor (PHP, Python, Ruby, Java, C#, etc.) tiene su propio mecanismo de manipulación de 
-datos de formulario
-
--->
