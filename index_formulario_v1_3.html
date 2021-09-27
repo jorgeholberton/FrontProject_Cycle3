@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
  
@@ -21,14 +22,15 @@
     <link rel="shortcut icon" type="image/png" href="imagenes/favicon.png"/>  
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <link rel="stylesheet" id='videofondo' href="https://carontestudio.com/css/main.min.css">
   </head>
 
 <!-- src="video/video.mp4"  src="https://carontestudio.com/img/f1.mp4" -->
 <body >
-  
+  <link rel="stylesheet" z-index: -1; href="https://carontestudio.com/css/main.min.css">
      
       <h1 align="center" <strong> CALCULADORA IMC EN LÍNEA </strong></h1> 
-   
+    
     <!--form define formalmente un formulario -->
     <!--El atributo action define la ubicación (URL) donde se envían los datos que el
        formulario ha recopilado cuando se validan.-->
@@ -37,16 +39,23 @@
       
         <form action="//dirección de envío" method="post" no muestra los elementos de ruta, puede enviar imágenes>
       -->
-    <form  name='registro' id="registro" >   
       <div class="one">
-        <video id="videofondo" class="video-background" poster="https://carontestudio.com/img/contacto.jpg" autoplay="autoplay" no-controls="" muted="muted" loop="">
+        <video id="videofondo" class="video-background" z-index="-1" poster="https://carontestudio.com/img/contacto.jpg" autoplay="autoplay" no-controls="" muted="muted" loop="">
           <source  src="video/video.mp4" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2""">
         </video>
-      </div> 
+      </div>
+      <div class="one">
+        <video id="videofondo" z-index="-1" !important; class="video-background" poster="https://carontestudio.com/img/contacto.jpg" autoplay="autoplay" no-controls="" muted="muted" loop="">
+          <source src="https://carontestudio.com/img/f1.mp4" type="video/mp4" ;="" codecs="avc1.42E01E, mp4a.40.2">
+        </video></div>
+      <form  name='registro' id="registro" >   
+       
+
+      
    <!-- <form action="/" method="post" name='registro' id="registro" </div>-->
     
       <p class="texto_general" align="all"><strong>
-        <img  src="imagenes/medicina2.png"   style="max-width:100%;height:auto;">
+        <img  src="imagenes/medicina3.png"   style="max-width:100%;height:auto;">
         Esta calculadora proporciona el IMC y la correspondiente categoría de nivel de 
         peso según el IMC. Utilícela para adultos de 20 años o más.
         Para niños y adolescentes, de 2 a 19 años, utilice la Calculadora del IMC para niños y adolescentes.
@@ -138,7 +147,7 @@
          <br/><!--salto de linea.-->
          
          <!--Mostrar IMC.-->
-         <td><input type="text" name="imcobtenido" id="imcobtenido"></td> 
+         <td><input type="text" size="400px" name="imcobtenido" id="imcobtenido"></td> 
          <br/><!--salto de linea.-->
          <br/><!--salto de linea.-->
          
@@ -147,7 +156,7 @@
          <br/><!--salto de linea.-->
          
          <!--Mostrar Categoria.-->
-          <td><input type="text" name="categoria_obtenida" id="categoria_obtenida"></td> 
+          <td><input type="text" size="400px" name="categoria_obtenida" id="categoria_obtenida"></td> 
           <br/><!--salto de linea.-->
          
          <br/><!--salto de linea.-->
@@ -163,9 +172,9 @@
          
         
         
-        <button type="submit" size=200px class="btn btn-success" onclick="{(e) => this.validarFormulario(e)}";drawChart()><strong>Enviar</strong></button>
+        <button type="submit" align="center" size="400px" class="btn btn-success" onclick="{(e) => this.validarFormulario(e)}";drawChart()><strong>Enviar</strong></button>
         <!--<input type="button" name="btn_calcular" id="btn_calcular" value="Calcular" class="btn btn-success" onclick="obtenerDatos()">-->
-        <button type="button" size=200px class="btn btn-success" onclick="grafica()"><strong>Gráfica</strong></button>
+        <button type="button" align="center" size ="400px" class="btn btn-success" onclick="grafica()"><strong>Gráfica</strong></button>
             <br/><!--salto de linea.-->
        </form>
        <script>
@@ -177,10 +186,11 @@
 
   <!--Llamado archivo javascript-->
  <script src="javascript/formulario_imc.js"></script>
- <script src="javascript/grafica_imc.js"></script>
+ <script src="javascript/grafica_imc.js" ></script>
  <br/><!--salto de linea.-->
  <!--Capa para ubicar la gráfica-->
-       <div id="linechart_material" style="width: 900px; height: 500px;"></div>
-</body>
+       <div id="linechart_material" align="center">  style="width: 900px; height: 500px;"></div>
+
+      </body>
 
 </html>
